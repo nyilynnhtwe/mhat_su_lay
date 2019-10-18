@@ -1,2 +1,4 @@
-body{background-color: #2e8286;font-family:sans-serif;}
-h1{color :blue;}
+body{background-color: #0B3142;font-family:'Padauk', sans-serif;}
+header{height: 100px;background-color:#2e8286 ;border-radius: 5px;}
+h1{color :#D6D3F0 ;text-align: center;padding-top: 20px;font-size: 50px;}
+.dis{width: 100%;background-color:rgba(73, 82, 85, 0.67);border-radius: 5px;}
