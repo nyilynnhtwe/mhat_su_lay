@@ -1,0 +1,26 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'  %}">
+</head>
+<body>
+    <h1></h1>
+<ul>
+    {% for todo_item in all_items %}
+    <li>{{ todo_item.content }}
+    <form action="/deletetodo/{{todo_item.id }}/" method="post">{% csrf_token %}
+        <input type="submit" value="delete">
+        </form></li>
+    {%  endfor %} 
+    <form action="/addtodo/" method="post">{% csrf_token %}
+    <input type="text" name="content">
+    <input type="submit" value="Add">
+    </form>
+</ul>
+</body>
+</html>
