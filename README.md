@@ -8,6 +8,7 @@ I used
 font      - Padauk from Google Fonts
 FrameWork - Django
 Language  - Python,Html,Css
+APIs      - fonts.googleapis, https://24timezones.com
 
 test-command >>>>> python manage.py runserver 8600
 
