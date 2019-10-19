@@ -5,26 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hello</title>
+    <title>မှတ်စုလေး</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'  %}">
     <link rel="shortcut icon" href="{% static 'images/icon.png'  %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Padauk&display=swap" rel="stylesheet">
+<style>
+ input[type=text]{margin-top:20px;width: 70%;height: 25px;display: block;}
+    input[type=submit]{background-color: #4CAF50;
+
+    border: none;
+    border-radius: 5px;;
+    color: #443737;
+    padding: 3px 8px;
+    margin: 4px 2px;
+    cursor: pointer;}
+    </style>
 </head>
 <body>
 <header>    <h1>မင်္ဂလာပါ</h1></header>
+<div class="cleanslate w24tz-current-time w24tz-middle" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><p>
+    <a href="//24timezones.com/world_directory/time_in_yangon.php" 
+    style="text-decoration: none" 
+    class="clock24" id="tz24-1571474316-c1208-eyJob3VydHlwZSI6MTIsInNob3dkYXRlIjoiMSIsInNob3dzZWNvbmRzIjoiMCIsImNvbnRhaW5lcl9pZCI6ImNsb2NrX2Jsb2NrX2NiNWRhYWNiOGNjNzdhMSIsInR5cGUiOiJkYiIsImxhbmciOiJlbiJ9" title="what time Yangon" target="_blank" rel="nofollow">
+    Time in Yangon</a></p><div id="clock_block_cb5daacb8cc77a1"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+<div id="time"><h2 style="text-align:center;font-size:35px;color:#14868c;">မှတ်သားထားသည့်အရာများ</h2></div>
 <div class="dis">
     <ul  style="color: #42b883;font-size: 29px;font-weight: bold;">
         {% for todo_item in all_items %}
-        <li>{{ todo_item.content }}
+       <br> <li >{{ todo_item.content }}
         <form action="/deletetodo/{{todo_item.id }}/" method="post">{% csrf_token %}
-            <input type="submit" value="ဖျက်မည်" style="display:block;font-weight: bold;">
+            <input type="submit" value="ဖျက်မည်">
             </form></li>
-        {%  endfor %} 
+        {%  endfor %} <br>
         <form action="/addtodo/" method="post">{% csrf_token %}
         <input type="text" name="content">
         <input type="submit" value="မှတ်မည်" style="font-weight: bolder;">
         </form>
+        <br>
     </ul>
 </div>
 </body>
+<footer>
+    <h3 style="margin-top: 15px;">&copy;nyilynnhtwe 2019</h3>
+</footer>
 </html>

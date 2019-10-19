@@ -5,12 +5,15 @@ from .models import todoItem
 def todoView(request):
     #this is for display
     all_todo_items=todoItem.objects.all()
-    return render(request,'tempalte.html',{'all_items':all_todo_items})
+    cont={'all_items':all_todo_items}
+    return render(request,'tempalte.html',cont)
     
 def addtodo(request):
 #this is for adding items
     new_item=todoItem(content=request.POST['content'])
     new_item.save()
+
+
     return HttpResponseRedirect('/todo')
 
 
